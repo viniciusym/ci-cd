@@ -1,0 +1,211 @@
+/* Configurações Globais do Container */
+:host {
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  color: #1f2937;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Cabeçalho */
+.list-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 1.5rem;
+}
+
+.list-header h1 {
+  font-size: 2.5rem;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin: 0 0 1.5rem 0;
+}
+
+.refresh-btn {
+  background-color: #4f46e5;
+  /* Roxo moderno */
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.refresh-btn:hover:not(:disabled) {
+  background-color: #4338ca;
+}
+
+.refresh-btn:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+}
+
+/* O Grid Mágico (Responsivo automático) */
+.cat-grid {
+  display: grid;
+  /* Cria colunas de no mínimo 280px, preenchendo o espaço disponível */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Estilo do Cartão (Card) */
+.cat-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  /* Garante que a imagem respeite o border-radius */
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.cat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Imagem */
+.card-image-wrapper {
+  width: 100%;
+  height: 200px;
+  /* Altura fixa para alinhar os cards */
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Faz a imagem cobrir a área sem distorcer */
+  transition: transform 0.3s;
+}
+
+.cat-card:hover .card-image {
+  transform: scale(1.05);
+  /* Efeito de zoom no hover */
+}
+
+/* Conteúdo do Card */
+.card-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  /* Faz o conteúdo ocupar o espaço restante */
+  display: flex;
+  flex-direction: column;
+}
+
+.cat-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  color: #111827;
+}
+
+.cat-origin {
+  font-size: 0.875rem;
+  color: #6b7280;
+  background-color: #f3f4f6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* Estatísticas */
+.card-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  /* Empurra para o final do bloco de conteúdo */
+  padding-top: 1rem;
+  border-top: 1px solid #f3f4f6;
+  margin-bottom: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Footer do Card (Estrelas) */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating-bar {
+  color: #d1d5db;
+  /* Cor das estrelas vazias */
+}
+
+.star.filled {
+  color: #fbbf24;
+  /* Cor amarela para estrelas preenchidas */
+}
+
+/* Estados de Carregamento/Erro */
+.loading-state,
+.error-state,
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 12px;
+  border: 2px dashed #e5e7eb;
+  color: #6b7280;
+}
+
+.error-state {
+  border-color: #fecaca;
+  color: #dc2626;
+  background-color: #fef2f2;
+}
+
+/* Spinner Simples */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4f46e5;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

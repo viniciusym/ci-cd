@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CatService } from './services/cat';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,10 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-  protected title = 'frontend';
+export class App implements OnInit {
+  public readonly catService = inject(CatService);
+
+  ngOnInit(): void {
+    this.catService.fetchHeavyCats();
+  }
 }
