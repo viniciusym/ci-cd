@@ -1,4 +1,4 @@
-import supabase from "../supabase.ts";
+import supabase from "../supabase.js";
 
 
 const userService = {

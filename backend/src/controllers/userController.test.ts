@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import request from 'supertest';
-import userService from '../services/userService.ts';
-import app from '../server.ts';
+import userService from '../services/userService.js';
+import app from '../server.js';
 
 vi.mock('../../src/services/userService');
 

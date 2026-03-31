@@ -1,8 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import userService from '../services/userService.ts';
-import supabase from '../supabase.ts';
+import userService from '../services/userService.js';
+import supabase from '../supabase.js';
 
-vi.mock('../supabase.ts', () => ({
+vi.mock('../supabase.js', () => ({
   default: {
     from: vi.fn(),
   },
