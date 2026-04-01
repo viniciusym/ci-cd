@@ -39,7 +39,6 @@ jobs:
           SUPABASE_KEY: "mock"
   build-and-push:
     runs-on: ubuntu-latest
-    # Só publica se os testes passarem (opcional, mas recomendado)
     needs: [test] 
 
     steps:
